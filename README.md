@@ -1,37 +1,254 @@
-## Hi there 👋
+<!DOCTYPE html>
+<html>
+<head>
+<title>Pro Game Website</title>
 
-<!--
-**bayanda1958-star/bayanda1958-star** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+<style>
+body{
+    margin:0;
+    font-family:Arial;
+    background:#0f172a;
+    color:white;
+    text-align:center;
+}
 
-Here are some ideas to get you started:
+header{
+    background:#020617;
+    padding:15px;
+    font-size:25px;
+}
 
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
-# 💫 About Me:
-🔭 I’m currently working on an App<br>👯 I’m looking to collaborate on projects<br>🤝 I’m looking for help with most of my projects<br>🌱 I’m currently learning cybersecurity<br>💬 Ask me about anything<br>
+button{
+    padding:10px;
+    margin:5px;
+    border:none;
+    background:#22c55e;
+    color:white;
+    cursor:pointer;
+}
 
+button:hover{
+    background:#16a34a;
+}
 
-## 🌐 Socials:
-[![TikTok](https://img.shields.io/badge/TikTok-%23000000.svg?logo=TikTok&logoColor=white)](https://tiktok.com/@saul_k1472) [![email](https://img.shields.io/badge/Email-D14836?logo=gmail&logoColor=white)](mailto:bayanda.1958@gmail.com) 
+#gameArea{
+    width:350px;
+    height:350px;
+    background:#111827;
+    margin:auto;
+    margin-top:20px;
+    position:relative;
+    border:2px solid white;
+}
 
-# 💻 Tech Stack:
-![C](https://img.shields.io/badge/c-%2300599C.svg?style=for-the-badge&logo=c&logoColor=white) ![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white) ![Java](https://img.shields.io/badge/java-%23ED8B00.svg?style=for-the-badge&logo=openjdk&logoColor=white) ![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white) ![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E) ![C++](https://img.shields.io/badge/c++-%2300599C.svg?style=for-the-badge&logo=c%2B%2B&logoColor=white) ![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54) ![Alpine.js](https://img.shields.io/badge/alpinejs-white.svg?style=for-the-badge&logo=alpinedotjs&logoColor=%238BC0D0) ![MUI](https://img.shields.io/badge/MUI-%230081CB.svg?style=for-the-badge&logo=mui&logoColor=white) ![Qt](https://img.shields.io/badge/Qt-%23217346.svg?style=for-the-badge&logo=Qt&logoColor=white) ![SQLite](https://img.shields.io/badge/sqlite-%2307405e.svg?style=for-the-badge&logo=sqlite&logoColor=white) ![MySQL](https://img.shields.io/badge/mysql-4479A1.svg?style=for-the-badge&logo=mysql&logoColor=white) ![CrateDB](https://img.shields.io/badge/CrateDB-009DC7?style=for-the-badge&logo=CrateDB&logoColor=white) ![Adobe](https://img.shields.io/badge/adobe-%23FF0000.svg?style=for-the-badge&logo=adobe&logoColor=white) ![Canva](https://img.shields.io/badge/Canva-%2300C4CC.svg?style=for-the-badge&logo=Canva&logoColor=white) ![NumPy](https://img.shields.io/badge/numpy-%23013243.svg?style=for-the-badge&logo=numpy&logoColor=white) ![Pandas](https://img.shields.io/badge/pandas-%23150458.svg?style=for-the-badge&logo=pandas&logoColor=white) ![PyTorch](https://img.shields.io/badge/PyTorch-%23EE4C2C.svg?style=for-the-badge&logo=PyTorch&logoColor=white) ![GitHub](https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white)
-# 📊 GitHub Stats:
-![](https://github-readme-stats.vercel.app/api?username=bayanda1958-star&theme=dark&hide_border=false&include_all_commits=true&count_private=true)<br/>
-![](https://nirzak-streak-stats.vercel.app/?user=bayanda1958-star&theme=dark&hide_border=false)<br/>
-![](https://github-readme-stats.vercel.app/api/top-langs/?username=bayanda1958-star&theme=dark&hide_border=false&include_all_commits=true&count_private=true&layout=compact)
+#box{
+    width:50px;
+    height:50px;
+    background:red;
+    position:absolute;
+    display:none;
+    border-radius:10px;
+}
 
-### ✍️ Random Dev Quote
-![](https://quotes-github-readme.vercel.app/api?type=vetical&theme=radical)
+#enemy{
+    width:40px;
+    height:40px;
+    background:yellow;
+    position:absolute;
+    display:none;
+    border-radius:50%;
+}
 
----
-[![](https://visitcount.itsvg.in/api?id=bayanda1958-star&icon=0&color=0)](https://visitcount.itsvg.in)
+.panel{
+    margin-top:10px;
+    font-size:18px;
+}
 
-<!-- Proudly created with GPRM ( https://gprm.itsvg.in ) -->
+.dark{
+    background:black;
+}
+
+.light{
+    background:white;
+    color:black;
+}
+</style>
+
+</head>
+<body>
+
+<header>🎮 Pro Game Website</header>
+
+<div class="panel">
+
+Score: <span id="score">0</span> |
+Time: <span id="time">15</span>
+
+<br>
+
+<button onclick="startGame()">Start</button>
+<button onclick="restartGame()">Restart</button>
+<button onclick="toggleTheme()">Dark / Light</button>
+
+</div>
+
+<div id="gameArea">
+
+<div id="box" onclick="hitBox()"></div>
+<div id="enemy" onclick="hitEnemy()"></div>
+
+</div>
+
+<audio id="clickSound">
+<source src="https://www.soundjay.com/buttons/sounds/button-16.mp3">
+</audio>
+
+<script>
+
+let score = 0
+let time = 15
+let running = false
+let timer
+
+function startGame(){
+
+score = 0
+time = 15
+running = true
+
+updateUI()
+
+showBox()
+showEnemy()
+
+timer = setInterval(()=>{
+
+time--
+updateUI()
+
+if(time <= 0){
+endGame()
+}
+
+},1000)
+
+}
+
+function restartGame(){
+clearInterval(timer)
+startGame()
+}
+
+function updateUI(){
+document.getElementById("score").innerText = score
+document.getElementById("time").innerText = time
+}
+
+function randomPos(size){
+
+let max = 300
+
+return Math.random() * (max - size)
+
+}
+
+function showBox(){
+
+let box = document.getElementById("box")
+
+box.style.display = "block"
+
+moveBox()
+
+}
+
+function moveBox(){
+
+if(!running) return
+
+let box = document.getElementById("box")
+
+box.style.left = randomPos(50) + "px"
+box.style.top = randomPos(50) + "px"
+
+setTimeout(moveBox,800)
+
+}
+
+function hitBox(){
+
+if(!running) return
+
+score++
+
+playSound()
+
+moveBox()
+
+updateUI()
+
+}
+
+function showEnemy(){
+
+let enemy = document.getElementById("enemy")
+
+enemy.style.display = "block"
+
+moveEnemy()
+
+}
+
+function moveEnemy(){
+
+if(!running) return
+
+let enemy = document.getElementById("enemy")
+
+enemy.style.left = randomPos(40) + "px"
+enemy.style.top = randomPos(40) + "px"
+
+setTimeout(moveEnemy,600)
+
+}
+
+function hitEnemy(){
+
+if(!running) return
+
+score--
+
+updateUI()
+
+}
+
+function endGame(){
+
+running = false
+
+clearInterval(timer)
+
+alert("Game Over Score: " + score)
+
+}
+
+function toggleTheme(){
+
+let body = document.body
+
+if(body.classList.contains("light")){
+body.classList.remove("light")
+}else{
+body.classList.add("light")
+}
+
+}
+
+function playSound(){
+document.getElementById("clickSound").play()
+}
+
+</script>
+
+</body>
+</html>
